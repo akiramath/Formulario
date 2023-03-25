@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #E5C1D0;
+}
+.box{
+    background-color: white;
+    width: 900px;
+    margin: auto;
+    margin-top: 70px;
+    border-radius: 10px;
+    box-shadow: 20px 20px 20px #6e54711c;
+}
+.conteudo{
+    display: flex;
+    gap: 30px;
+}
+.video{
+    position: relative;
+    background-color: #E5C1D0;
+    width: 450px;
+    height: 500px;
+
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 350px;
+    margin-left: 15px;
+}
+h1{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 2.5em;
+    color: #6E5471;
+}
+.info{
+    color: #C18BA9;
+    font-size: 20px;
+    text-align: center;
+}
+.infobox{
+    font-size: 16px;
+    font-weight: 500;
+    color: #6E5471;
+    padding: 7px;
+    border-radius: 10px;
+    border: 1px solid #E5C1D0;
+}
+.data{
+    margin-top: -15px;
+    margin-bottom: -10px;
+    margin-left: 15px;
+    color: #5b465dc2;
+    font-size: 12px;
+}
+.escolha{
+    color: #6E5471;
+    text-align: center;
+    font-size: 20px;
+}
+.opcoes{
+    color: #6E5471;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 15px;
+    font-weight: bolder;
+}
+.radio{
+    margin-left: 10px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #4e7886;
+    cursor: pointer;
+}
+button{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #5f92a3;
+    color: white;
+    font-size: 1.2em;
+}
+@media screen and (max-width: 1000px){
+    .box{
+        width: 800px;
+    }
+    .fomulario{
+        width: 250px;
+    }
+    h1{
+        font-size: 2em;
+    }
+    #video{
+        margin-top: 50px;
+        width: 370px; 
+        height: 400px;
+    }
+    .video{
+        width: 370px;
+    }
+}
+@media screen and (max-width: 900px){
+    .box{
+        width: 700px;
+    }
+    .formulario{
+        width: 300px;
+    }
+    h1{
+        font-size: 2em;
+    }
+    .infobox{
+        font-size: 15px;
+    }
+    .opcoes{
+        gap: 10px;
+    }
+    #video{
+        width: 300px; 
+        height: 400px;
+    }
+    .video{
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 850px){
+
+    .video{
+        display: none;
+    }
+    .box{
+        width: 500px;
+        height: 500px;
+    }
+    .formulario{
+        margin: auto;
+        gap: 16px;
+        width: 350px;
+    }
+    h1{
+        font-size: 2em;
+    }
+    .infobox{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 550px){
+    .video{
+        display: none;
+    }
+    .box{
+        width: 440px;
+        height: 500px;
+    }
+    .formulario{
+        margin: auto;
+        gap: 16px;
+        width: 350px;
+    }
+    h1{
+        font-size: 2em;
+    }
+    .infobox{
+        font-size: 15px;
+    }
+}
