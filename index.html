@@ -4,35 +4,95 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Inscrição</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('imagens/fundo.jpg');
+            background-position: center center;
+            background-size: cover;
+        }
+        #conteudo{
+            align-items: center;
+        }
+        #formulario {
+            width: 500px;
+            padding: 10px;
+            margin-top: 30px;
+            box-shadow: 3px 3px 50px #112a23ba;
+        }
+        h1, p, label, input{
+            color: #55250D !important;
+        }
+        input {
+            margin: 10px 0;
+        }
+        #enviar {
+            margin-top: 10px;
+        }
+        #escolhas{
+            margin: auto;
+            width: 300px;
+        }
+        #enviar{
+            background-color: #9C5229;
+            color: white;
+            transition: width 1s; 
+            width: 200px;
+        }
+        #enviar:hover {
+            width: 70%; 
+        }
+        #enviar:active {
+            transform: scale(0.9);
+        }
+    </style>
 </head>
 <body>
     <main>
         <section class="box">
-            <section class="conteudo">
-                <div class="video">
-                    <video id="video"
-                src="imagens/fundo.mp4" width="450" height="500" autoplay loop muted></video>
-                </div>
-                <form class="formulario">
-                        <h1>Inscreva-se</h1>
-                        <p class="info">Digite suas informações abaixo!</p>
-                        <input type="text" name="nome" class="infobox" placeholder="Nome Completo">
-                        <input type="text" nome="data de nascimento" class="infobox" placeholder="Data de Nascimento"><span class="data">ex:00/00/0000</span>
-                        <input type="email" name="email" class="infobox" placeholder="Email">
-                        <input type="text" name="telefone" class="infobox" placeholder="Telefone">
-                        <input type="text" name="portifolio" class="infobox" placeholder="Portifólio">
-                        <p class="escolha">Qual sua área de interesse?</p>
-                        <div class="opcoes">
-                            <span><input type="radio" name="profissão" class="radio">Front-end</span>
-                            <span><input type="radio" name="profissão" class="radio">Back-end</span>
-                            <span><input type="radio" name="profissão" class="radio">Full-stack</span>
+            <section id="conteudo" class="d-flex justify-content-center">
+                <form id="formulario" class="form-control text-center">
+                    <div class="form-control text-center">
+                        <h1 class="h1">Inscreva-se</h1>
+                        <p class="form-text">Digite suas informações abaixo!</p>
                     </div>
-                    <button>Enviar</button>
+                    <input type="text" name="nome" class="infobox form-control" placeholder="Nome Completo">
+                    <input type="text" name="dataNascimento" class="infobox form-control" placeholder="Data de Nascimento">
+                    <input type="email" name="email" class="infobox form-control" placeholder="Email">
+                    <input type="text" name="telefone" class="infobox form-control" placeholder="Telefone">
+                    <input type="text" name="portfolio" class="infobox form-control" placeholder="Portfólio">
+                    <label class="form-label" for="escolhas">Qual sua área de interesse?</label>
+                    <div class="form-control d-flex justify-content-evenly" id="escolhas">
+                        <span><input type="radio" name="profissao" class="radio form-control" value="Front-end">Front-end</span>
+                        <span><input type="radio" name="profissao" class="radio form-control" value="Back-end">Back-end</span>
+                        <span><input type="radio" name="profissao" class="radio form-control" value="Full-stack">Full-stack</span>
+                    </div>
+                    <div class="text-center"><button id="enviar" class="btn">Enviar</button></div>
                 </form>
             </section>
         </section>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $("#enviar").on('click', function(e){
+            e.preventDefault();
+            var nome = $("input[name='nome']").val();
+            var dataNascimento = $("input[name='dataNascimento']").val();
+            var email = $("input[name='email']").val();
+            var telefone = $("input[name='telefone']").val();
+            var portfolio = $("input[name='portfolio']").val();
+            var profissao = $("input[name='profissao']:checked").val();
+            
+            chamaForm(nome, dataNascimento, email, telefone, portfolio, profissao);
+        });
+
+        function chamaForm(nome, dataNascimento, email, telefone, portfolio, profissao){
+            
+            var mensagem = "Nome: " + nome + "\nData de Nascimento: " + dataNascimento + "\nEmail: " + email + "\nTelefone: " + telefone + "\nPortfólio: " + portfolio + "\nProfissão: " + profissao;
+            alert(mensagem);
+           
+        };
+    </script>
 </body>
 </html>
